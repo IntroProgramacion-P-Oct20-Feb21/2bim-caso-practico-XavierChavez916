@@ -36,24 +36,31 @@ public class Codigo {
                     + "*--------------------<***>--------------------*");
             opcion = entrada.nextInt();
             if (opcion == 1) {
+                // Se llama a al funcion crearFacebook
                 System.out.printf("%s", crearFacebook());
             } else {
                 if (opcion == 2) {
+                    // Se llama al procedimiento crearTwitter
                     crearTwitter();
                 } else {
                     if (opcion == 3) {
+                        // Se llama a al funcion crearWhatsapp
                         System.out.printf("%s", crearWhatsapp());
                     } else {
                         if (opcion == 4) {
+                            // Se llama al procedimiento crearTelegram
                             crearTelegram();
                         } else {
                             if (opcion == 5) {
+                                // Se llama a al funcion crearSignal
                                 System.out.printf("%s", crearSignal());
                             } else {
                                 if (opcion == 6) {
+                                    // Se llama al procedimiento crearInstagram
                                     crearInstagram();
                                 } else {
                                     if (opcion == 7) {
+                                        // Se llama a al funcion crearFlickr
                                         System.out.printf("%s", crearFlickr());
                                     } else {
                                         System.out.println("Opcion Incorrecta.");
@@ -66,16 +73,23 @@ public class Codigo {
                 }
             }
             entrada.nextLine();
-            System.out.println("\nIngrese (si) si desea salir del ciclo");
+            // Se le pregunta al usuario si desea salir del ciclo
+            System.out.println("\nIngrese (si) para salir del ciclo");
             salida = entrada.nextLine();
+            // A lo que ingrese el usuario lo convertimos en minuscula
             salida = salida.toLowerCase();
+            // Si lo que ingresa el usuario es "si" va a salir del ciclo
             if (salida.equals("si")) {
                 bandera = false;
             }
         }
-        obtenerMensaje(contador);
-    }
 
+        System.out.printf("*------->*Resultado de Campaña*<--------*\n%s\n"
+                + "*--------------<*><^><*>---------------*\n",
+                obtenerMensaje(contador));
+    }
+    
+    // Se crea la funcion crearFacebook 
     public static String crearFacebook() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -90,6 +104,7 @@ public class Codigo {
         usuario = entrada.nextLine();
         System.out.println("Ingrese su edad");
         edad = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su ciudad");
         ciudad = entrada.nextLine();
@@ -103,7 +118,8 @@ public class Codigo {
                 usuario, edad, ciudad, pais, correo);
         return cadena;
     }
-
+    
+    // Se crea el procedimiento crearTwitter
     public static void crearTwitter() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -121,6 +137,7 @@ public class Codigo {
         apellidos = entrada.nextLine();
         System.out.println("Ingrese su edad");
         edad = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su ciudad");
         ciudad = entrada.nextLine();
@@ -137,6 +154,7 @@ public class Codigo {
                 usuario, apellidos, edad, ciudad, pais, idioma, correo);
     }
 
+    // Se crea la funcion crearWhatsapp
     public static String crearWhatsapp() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -153,6 +171,7 @@ public class Codigo {
         telefono = entrada.nextInt();
         System.out.println("Ingrese su edad");
         edad = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su ciudad");
         ciudad = entrada.nextLine();
@@ -166,6 +185,7 @@ public class Codigo {
         return cadena;
     }
 
+    // Se crea el procedimiento crearTelegram
     public static void crearTelegram() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -179,6 +199,7 @@ public class Codigo {
         usuario = entrada.nextLine();
         System.out.println("Ingrese su número de teléfono");
         telefono = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su ciudad");
         ciudad = entrada.nextLine();
@@ -193,6 +214,7 @@ public class Codigo {
                 usuario, telefono, ciudad, pais, areaInteres);
     }
 
+    // Se crea la funcion crearSignal  
     public static String crearSignal() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -207,6 +229,7 @@ public class Codigo {
         usuario = entrada.nextLine();
         System.out.println("Ingrese su número de teléfono");
         telefono = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su ciudad");
         ciudad = entrada.nextLine();
@@ -221,7 +244,8 @@ public class Codigo {
                 usuario, telefono, ciudad, pais, hobby);
         return cadena;
     }
-
+    
+    // Se crea el procedimiento crearInstagram
     public static void crearInstagram() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -236,6 +260,7 @@ public class Codigo {
         ciudad = entrada.nextLine();
         System.out.println("Ingrese su edad");
         edad = entrada.nextInt();
+        // Limpieza de buffer
         entrada.nextLine();
         System.out.println("Ingrese su correo electronico");
         correo = entrada.nextLine();
@@ -244,7 +269,8 @@ public class Codigo {
                 + "*----------------<***>---------------*",
                 usuario, ciudad, edad, correo);
     }
-
+    
+    // Se crea la funcion crearFlickr
     public static String crearFlickr() {
         Scanner entrada = new Scanner(System.in);
         String usuario;
@@ -264,7 +290,8 @@ public class Codigo {
         return cadena;
     }
 
-    public static void obtenerMensaje(int a) {
+    // Se crea la funcion obtenerMensaje
+    public static String obtenerMensaje(int a) {
         String cadena = "";
         String[] mensajeFinal = {"Campaña con poca afluencia",
             "Campaña moderada siga adelante", "Excelente campaña"};
@@ -279,6 +306,6 @@ public class Codigo {
                 }
             }
         }
-        System.out.println(cadena);
+        return cadena;
     }
 }
