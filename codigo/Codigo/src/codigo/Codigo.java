@@ -34,50 +34,47 @@ public class Codigo {
                     + "> Si ingresa 7 se creara una cuenta de Flickr.\n"
                     + "*--------------------<***>--------------------*");
             opcion = entrada.nextInt();
-            if (opcion == 1) {
-                // Se llama a al funcion crearFacebook
-                System.out.printf("%s", crearFacebook());
-                contador += 1;
-            } else {
-                if (opcion == 2) {
+
+            switch (opcion) {
+                case 1:
+                    // Se llama a al funcion crearFacebook
+                    System.out.printf("%s", crearFacebook());
+                    contador += 1;
+                    break;
+                case 2:
                     // Se llama al procedimiento crearTwitter
                     crearTwitter();
                     contador += 1;
-                } else {
-                    if (opcion == 3) {
-                        // Se llama a al funcion crearWhatsapp
-                        System.out.printf("%s", crearWhatsapp());
-                        contador += 1;
-                    } else {
-                        if (opcion == 4) {
-                            // Se llama al procedimiento crearTelegram
-                            crearTelegram();
-                            contador += 1;
-                        } else {
-                            if (opcion == 5) {
-                                // Se llama a al funcion crearSignal
-                                System.out.printf("%s", crearSignal());
-                                contador += 1;
-                            } else {
-                                if (opcion == 6) {
-                                    // Se llama al procedimiento crearInstagram
-                                    crearInstagram();
-                                    contador += 1;
-                                } else {
-                                    if (opcion == 7) {
-                                        // Se llama a al funcion crearFlickr
-                                        System.out.printf("%s", crearFlickr());
-                                        contador += 1;
-                                    } else {
-                                        System.out.println("Opcion Incorrecta.");
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
+                    break;
+                case 3:
+                     // Se llama a al funcion crearWhatsapp
+                    System.out.printf("%s", crearWhatsapp());
+                    contador += 1;
+                    break;
+                case 4:
+                    // Se llama al procedimiento crearTelegram
+                    crearTelegram();
+                    contador += 1;
+                    break;
+                case 5:
+                    // Se llama a al funcion crearSignal
+                    System.out.printf("%s", crearSignal());
+                    contador += 1;
+                    break;
+                case 6:
+                    // Se llama al procedimiento crearInstagram
+                    crearInstagram();
+                    contador += 1;
+                    break;
+                case 7:
+                    // Se llama a al funcion crearFlickr
+                    System.out.printf("%s", crearFlickr());
+                    contador += 1;
+                    break;
+                default:
+                    System.out.println("Opcion Incorrecta.");
             }
+            
             entrada.nextLine();
             // Se le pregunta al usuario si desea salir del ciclo
             System.out.println("\nIngrese (si) para salir del ciclo");
@@ -94,7 +91,7 @@ public class Codigo {
                 + "*--------------<*><^><*>---------------*\n",
                 obtenerMensaje(contador));
     }
-    
+
     // Se crea la funcion crearFacebook 
     public static String crearFacebook() {
         Scanner entrada = new Scanner(System.in);
@@ -124,7 +121,7 @@ public class Codigo {
                 usuario, edad, ciudad, pais, correo);
         return cadena;
     }
-    
+
     // Se crea el procedimiento crearTwitter
     public static void crearTwitter() {
         Scanner entrada = new Scanner(System.in);
@@ -250,7 +247,7 @@ public class Codigo {
                 usuario, telefono, ciudad, pais, hobby);
         return cadena;
     }
-    
+
     // Se crea el procedimiento crearInstagram
     public static void crearInstagram() {
         Scanner entrada = new Scanner(System.in);
@@ -275,7 +272,7 @@ public class Codigo {
                 + "*----------------<***>---------------*",
                 usuario, ciudad, edad, correo);
     }
-    
+
     // Se crea la funcion crearFlickr
     public static String crearFlickr() {
         Scanner entrada = new Scanner(System.in);
@@ -298,7 +295,7 @@ public class Codigo {
 
     // Se crea la funcion obtenerMensaje
     public static String obtenerMensaje(int a) {
-        String cadena = "";
+        String cadena;
         String[] mensajeFinal = {"Campaña con poca afluencia",
             "Campaña moderada siga adelante", "Excelente campaña"};
         if ((a >= 1) && (a <= 5)) {
@@ -309,10 +306,10 @@ public class Codigo {
             } else {
                 if (a >= 16) {
                     cadena = mensajeFinal[2];
-                }else{
+                } else {
                     cadena = "nula";
                 }
-                
+
             }
         }
         return cadena;
