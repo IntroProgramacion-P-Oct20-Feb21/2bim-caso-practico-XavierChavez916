@@ -24,7 +24,6 @@ public class Codigo {
         int contador = 0;
 
         while (bandera) {
-            contador += 1;
             System.out.println("*-------------- Menú de opciones -------------*");
             System.out.println("> Si ingresa 1 se creara una cuenta de Facebook.\n"
                     + "> Si ingresa 2 se creara una cuenta de Twitter.\n"
@@ -38,30 +37,37 @@ public class Codigo {
             if (opcion == 1) {
                 // Se llama a al funcion crearFacebook
                 System.out.printf("%s", crearFacebook());
+                contador += 1;
             } else {
                 if (opcion == 2) {
                     // Se llama al procedimiento crearTwitter
                     crearTwitter();
+                    contador += 1;
                 } else {
                     if (opcion == 3) {
                         // Se llama a al funcion crearWhatsapp
                         System.out.printf("%s", crearWhatsapp());
+                        contador += 1;
                     } else {
                         if (opcion == 4) {
                             // Se llama al procedimiento crearTelegram
                             crearTelegram();
+                            contador += 1;
                         } else {
                             if (opcion == 5) {
                                 // Se llama a al funcion crearSignal
                                 System.out.printf("%s", crearSignal());
+                                contador += 1;
                             } else {
                                 if (opcion == 6) {
                                     // Se llama al procedimiento crearInstagram
                                     crearInstagram();
+                                    contador += 1;
                                 } else {
                                     if (opcion == 7) {
                                         // Se llama a al funcion crearFlickr
                                         System.out.printf("%s", crearFlickr());
+                                        contador += 1;
                                     } else {
                                         System.out.println("Opcion Incorrecta.");
                                     }
@@ -303,7 +309,10 @@ public class Codigo {
             } else {
                 if (a >= 16) {
                     cadena = mensajeFinal[2];
+                }else{
+                    cadena = "nula";
                 }
+                
             }
         }
         return cadena;
