@@ -295,7 +295,7 @@ public class Codigo {
 
     // Se crea la funcion obtenerMensaje
     public static String obtenerMensaje(int a) {
-        String cadena;
+        String cadena = "";
         String[] mensajeFinal = {"Campaña con poca afluencia",
             "Campaña moderada siga adelante", "Excelente campaña"};
         if ((a >= 1) && (a <= 5)) {
@@ -306,12 +306,10 @@ public class Codigo {
             } else {
                 if (a >= 16) {
                     cadena = mensajeFinal[2];
-                } else {
-                    cadena = "nula";
                 }
-
             }
         }
         return cadena;
     }
+    
 }
